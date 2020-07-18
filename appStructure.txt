@@ -1,0 +1,21 @@
+● interviewee_project
+|
++---● interviewee_register (app folder)
+|   |
+|   +--● migrations (includes files related to migrations)
+|   |  
+|   +--● templates
+|   |  |--● interviewee_register
+|   |  |  |--base.html
+|   |  |  |--interviewee_form.html
+|   |  |  |--interviewee_list.html
+|   | 
+|   |-- models.py
+|   |-- forms.py
+|   |-- urls.py
+|   |-- views.py
+|
++---● interviewee_project (project folder)
+|   |
+|   |--settings.py 
+|   |--urls.py
