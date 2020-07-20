@@ -1,0 +1,1 @@
+web: gunicorn interviewee_register.wsgi:application --log-file -

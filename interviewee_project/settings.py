@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+#new
+import django-heroku
+import dj_database_url
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +29,7 @@ SECRET_KEY = '#fm8^0h5@y2h1on+*hn2$9*%3d*huo-%4n&#c84^(&uwtaui33'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,14 +81,19 @@ WSGI_APPLICATION = 'interviewee_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'intervieweeDB',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgrespwd',
+#         'HOST': 'localhost',
+#     }
+# }
+
+#new
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'intervieweeDB',
-        'USER': 'postgres',
-        'PASSWORD': 'postgrespwd',
-        'HOST': 'localhost',
-    }
+    'default': dj_database_url.config()
 }
 
 
@@ -125,3 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#new
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+django_heroku.settings(locals())
