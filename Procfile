@@ -1,1 +1,1 @@
-web: gunicorn interviewee_register.wsgi:application --log-file -
+web: gunicorn interviewee_project.wsgi:application --log-file -
